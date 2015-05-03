@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace CountDownLibrary {
     public interface ICountDown {
-        DateTime Date { get; set; }
-        TimeSpan TimeLeft { get; }
-        String Name { get; set; }
+        IDate Date { get; }
+        void AddObserver(ConverterType type, Action<IConverter> action);
+        void RemoveObserver(ConverterType type, Action<IConverter> action); 
     }
 }

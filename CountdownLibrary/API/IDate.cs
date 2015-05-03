@@ -5,8 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace CountDownLibrary {
-    public interface IConverter {
-        String Unit();
-        double Value {get; }
+    public interface IDate {
+        DateTime DateTime { get; set; }
+        TimeSpan TimeLeft { get; }
+        String Name { get; set; }
     }
 }

@@ -40,16 +40,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="API\IConverter.cs" />
-    <Compile Include="Main\Converters\ElephantGestation.cs" />
-    <Compile Include="Main\Converters\Minutes.cs" />
-    <Compile Include="Main\Converters\Seconds.cs" />
-    <Compile Include="Main\Converters\WeekDays.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Main\Converters\Weeks.cs" />
-    <Compile Include="Main\CountDownFactory.cs" />
-    <Compile Include="Main\CountDown.cs" />
     <Compile Include="API\ICountDown.cs" />
+    <Compile Include="Main\Converters\Converter.cs" />
+    <Compile Include="Main\Converters\ConverterType.cs" />
+    <Compile Include="Main\Converters\Minutes.cs" />
+    <Compile Include="Main\Converters\Weeks.cs" />
+    <Compile Include="Main\CountDown.cs" />
+    <Compile Include="Main\CountDownFactory.cs" />
+    <Compile Include="Main\Date.cs" />
+    <Compile Include="API\IDate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

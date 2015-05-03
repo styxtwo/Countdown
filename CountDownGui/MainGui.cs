@@ -7,9 +7,9 @@ using System.Windows.Forms;
 
 namespace GUI {
     public class MainGui {
-        private ICountDown countDown;
+        private IDate countDown;
         private MainScreen mainScreen;
-        public MainGui(ICountDown  countDown) {
+        public MainGui(IDate  countDown) {
             this.countDown = countDown;
         }
         

@@ -16,14 +16,15 @@ namespace LongCountDown {
 
         public CountDownMain() {
             countDown = CountDownFactory.Create();
-            countDown.Date =  new DateTime(2015, 09, 01);
-            countDown.Name = "WEDDING";
+            countDown.Date.DateTime =  new DateTime(2015, 09, 01);
+            countDown.Date.Name = "WEDDING";
 
             printer = new Printer(countDown);
-            Start(printer.Start, true);
 
-            gui = new MainGui(countDown);
-            Start(gui.Start);
+            //gui = new MainGui(countDown);
+            //Start(gui.Start);
+            while (true) {
+            }
         }
 
         public void Start(Action action, Boolean isBackground = false) {

@@ -15,12 +15,13 @@ namespace GUI {
             InitializeComponent();
         }
 
-        public void Update(ICountDown countDown) {
-            IConverter converter = new ElephantGestations();
-            double elapsedTime = converter.Convert(countDown.TimeLeft);
-            this.Time.Text = Math.Round(elapsedTime) + " " + converter.Unit();
+        public void Update(IDate countDown) {
+            //IConverter converter = new ElephantGestations();
+            //double elapsedTime = converter.Convert(countDown.TimeLeft);
+            double elapsedTime = -2;
+            this.Time.Text = Math.Round(elapsedTime) + " ";//+ converter.Unit();
             this.EventName.Text = countDown.Name;
-            this.Date.Text = countDown.Date.ToShortDateString();
+            this.Date.Text = countDown.DateTime.ToShortDateString();
         }
     }
 }

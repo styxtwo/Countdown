@@ -9,22 +9,14 @@ using System.Threading.Tasks;
 namespace SimplePrinter {
     public class Printer {
         private ICountDown countDown;
-        private IConverter calculator;
         public Printer(ICountDown countDown) {
-            calculator = new Weeks();
-            this.countDown = countDown;           
+            this.countDown = countDown;
+            countDown.AddObserver(ConverterType.Minutes, Print);
+            countDown.AddObserver(ConverterType.Weeks, Print);
         }
 
-        public void Start() {
-            while (true) {
-                Print();
-                Thread.Sleep(1000);
-            }
-        }
-
-        public void Print() {
-            double elapsedTime = calculator.Convert(countDown.TimeLeft);
-            System.Diagnostics.Debug.WriteLine(countDown.Name + " in " + Math.Floor(elapsedTime) + " " + calculator.Unit());
+        public void Print(IConverter converter) {
+            System.Diagnostics.Debug.WriteLine(countDown.Date.Name + " in " + converter.Value + " " + converter.Unit());
         }
     }
 }

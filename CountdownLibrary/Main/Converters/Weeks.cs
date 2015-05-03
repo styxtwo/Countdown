@@ -5,13 +5,28 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace CountDownLibrary {
-    public class Weeks : IConverter {
-        public double Convert(TimeSpan timeSpan) {
-            return timeSpan.TotalDays / 7;
+    class Weeks : Converter {
+        public Weeks(IDate date)
+            : base(date) {
+
         }
 
-        public string Unit() {
+        public override double Convert(IDate date) {
+            return date.TimeLeft.TotalDays / 7;
+        }
+
+        public override string Unit() {
             return "Weeks";
+        }
+
+        public override int Decimals {
+            get { return 0; }
+        }
+
+        public override double TimerInterval {
+            get {
+                return 86400000;
+            }
         }
     }
 }

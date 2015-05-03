@@ -5,13 +5,27 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace CountDownLibrary {
-    public class Minutes : IConverter {
-        public double Convert(TimeSpan timeSpan) {
-            return timeSpan.TotalMinutes;
+    class Minutes : Converter {
+        public Minutes(IDate date)
+            : base(date) {
+
+        }
+        public override double Convert(IDate date) {
+            return date.TimeLeft.TotalMinutes;
         }
 
-        public string Unit() {
+        public override string Unit() {
             return "Minutes";
+        }
+
+        public override int Decimals {
+            get { return 2; }
+        }
+
+        public override double TimerInterval {
+            get {
+                return 500;
+            }
         }
     }
 }

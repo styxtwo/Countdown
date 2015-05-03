@@ -5,8 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace CountDownLibrary {
-    public interface IConverter {
-        String Unit();
-        double Value {get; }
+    public enum ConverterType {
+        Minutes,
+        Weeks
     }
 }
