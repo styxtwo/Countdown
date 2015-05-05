@@ -1,24 +1,31 @@
 ﻿using CountDownLibrary;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GUI {
-    public class MainGui {
-        private IDate countDown;
+    public class Gui {
+
+        private BackgroundWorker worker = new BackgroundWorker();
+        private ICountDown countDown;
         private MainScreen mainScreen;
-        public MainGui(IDate  countDown) {
+        public Gui(ICountDown countDown) {
             this.countDown = countDown;
+            Init();
+            mainScreen = new MainScreen(countDown);
+            Start();
         }
-        
         [STAThread]
-        public void Start() {
+        private void Init() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            mainScreen = new MainScreen();
-            mainScreen.Update(countDown);
+        }
+
+        [STAThread]
+        private void Start() {
             Application.Run(mainScreen);
         }
     }

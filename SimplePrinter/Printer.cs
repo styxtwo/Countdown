@@ -11,12 +11,14 @@ namespace SimplePrinter {
         private ICountDown countDown;
         public Printer(ICountDown countDown) {
             this.countDown = countDown;
-            countDown.AddObserver(ConverterType.Minutes, Print);
-            countDown.AddObserver(ConverterType.Weeks, Print);
+            countDown.GetValue(UnitType.Seconds).Changed += Print;
+            //countDown.GetValue(UnitType.Weeks).Changed += Print;
+            //countDown.GetValue(UnitType.Minutes).Changed += Print;
         }
 
-        public void Print(IConverter converter) {
-            System.Diagnostics.Debug.WriteLine(countDown.Date.Name + " in " + converter.Value + " " + converter.Unit());
+        public void Print(IValue value) {
+            System.Diagnostics.Debug.WriteLine(countDown.Date.Name + " in " + value.Value + " " + value.Unit.Name);
+            //System.Diagnostics.Debug.WriteLine(unit.GetFunFact());
         }
     }
 }

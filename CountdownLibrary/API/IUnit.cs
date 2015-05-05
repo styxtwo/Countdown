@@ -5,8 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace CountDownLibrary {
-    public interface IDate {
-        DateTime DateTime { get; set; }
-        String Name { get; set; }
+    public interface IUnit {
+        String Name { get; }
+        String GetFunFact();
     }
 }

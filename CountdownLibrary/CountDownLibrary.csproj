@@ -39,12 +39,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="API\IConverter.cs" />
+    <Compile Include="API\IUnit.cs" />
     <Compile Include="API\ICountDown.cs" />
-    <Compile Include="Main\Converters\Converter.cs" />
-    <Compile Include="Main\Converters\ConverterType.cs" />
-    <Compile Include="Main\Converters\Minutes.cs" />
-    <Compile Include="Main\Converters\Weeks.cs" />
+    <Compile Include="API\IValue.cs" />
+    <Compile Include="Main\Values\Poller.cs" />
+    <Compile Include="Main\Values\TimeConstants.cs" />
+    <Compile Include="Main\Values\Unit.cs" />
+    <Compile Include="Main\Values\Units\Days.cs" />
+    <Compile Include="Main\Values\Units\Seconds.cs" />
+    <Compile Include="Main\Values\Value.cs" />
+    <Compile Include="Main\Values\Values.cs" />
+    <Compile Include="Main\Values\UnitType.cs" />
+    <Compile Include="Main\Values\Units\Minutes.cs" />
+    <Compile Include="Main\Values\Units\Weeks.cs" />
     <Compile Include="Main\CountDown.cs" />
     <Compile Include="Main\CountDownFactory.cs" />
     <Compile Include="Main\Date.cs" />

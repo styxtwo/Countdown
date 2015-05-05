@@ -11,17 +11,24 @@ using System.Windows.Forms;
 
 namespace GUI {
     public partial class MainScreen : Form {
-        public MainScreen() {
+        delegate void UpdateCallback();
+        private CountDownData data;
+        
+        public MainScreen(ICountDown countDown) {
             InitializeComponent();
+            data = new CountDownData(countDown, UnitType.Days);
+            data.DataChangedEvent += DataChanged;
+            DataChanged();
         }
 
-        public void Update(IDate countDown) {
-            //IConverter converter = new ElephantGestations();
-            //double elapsedTime = converter.Convert(countDown.TimeLeft);
-            double elapsedTime = -2;
-            this.Time.Text = Math.Round(elapsedTime) + " ";//+ converter.Unit();
-            this.EventName.Text = countDown.Name;
-            this.Date.Text = countDown.DateTime.ToShortDateString();
+        void DataChanged() {
+            if (this.InvokeRequired) {
+                UpdateCallback d = new UpdateCallback(DataChanged);
+                this.Invoke(d);
+            }
+            this.DateName.Text = data.DateName;
+            this.UnitValue.Text = data.UnitValue;
+            this.Date.Text = data.Date;
         }
     }
 }

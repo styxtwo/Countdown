@@ -5,8 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace CountDownLibrary {
-    public enum ConverterType {
+    public enum UnitType {
+        Seconds,
         Minutes,
-        Weeks
+        Days,
+        Weeks,
     }
 }

@@ -26,8 +26,8 @@
             this.components = new System.ComponentModel.Container();
             this.layoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.Date = new System.Windows.Forms.Label();
-            this.Time = new System.Windows.Forms.Label();
-            this.EventName = new System.Windows.Forms.Label();
+            this.UnitValue = new System.Windows.Forms.Label();
+            this.DateName = new System.Windows.Forms.Label();
             this.mainMenu1 = new System.Windows.Forms.MainMenu(this.components);
             this.menuItem1 = new System.Windows.Forms.MenuItem();
             this.menuItem2 = new System.Windows.Forms.MenuItem();
@@ -43,8 +43,8 @@
             this.layoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.layoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.layoutPanel.Controls.Add(this.Date, 0, 2);
-            this.layoutPanel.Controls.Add(this.Time, 0, 1);
-            this.layoutPanel.Controls.Add(this.EventName, 0, 0);
+            this.layoutPanel.Controls.Add(this.UnitValue, 0, 1);
+            this.layoutPanel.Controls.Add(this.DateName, 0, 0);
             this.layoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutPanel.Location = new System.Drawing.Point(0, 0);
             this.layoutPanel.Margin = new System.Windows.Forms.Padding(0);
@@ -67,30 +67,30 @@
             this.Date.TabIndex = 3;
             this.Date.Text = "date";
             // 
-            // Time
+            // UnitValue
             // 
-            this.Time.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.Time.AutoSize = true;
-            this.Time.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Time.ForeColor = System.Drawing.Color.Crimson;
-            this.Time.Location = new System.Drawing.Point(89, 44);
-            this.Time.Name = "Time";
-            this.Time.Size = new System.Drawing.Size(29, 32);
-            this.Time.TabIndex = 0;
-            this.Time.Text = "0";
-            this.Time.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.UnitValue.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.UnitValue.AutoSize = true;
+            this.UnitValue.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UnitValue.ForeColor = System.Drawing.Color.Crimson;
+            this.UnitValue.Location = new System.Drawing.Point(89, 44);
+            this.UnitValue.Name = "UnitValue";
+            this.UnitValue.Size = new System.Drawing.Size(29, 32);
+            this.UnitValue.TabIndex = 0;
+            this.UnitValue.Text = "0";
+            this.UnitValue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // EventName
+            // DateName
             // 
-            this.EventName.AutoSize = true;
-            this.EventName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EventName.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.EventName.Location = new System.Drawing.Point(3, 0);
-            this.EventName.Name = "EventName";
-            this.EventName.Size = new System.Drawing.Size(94, 21);
-            this.EventName.TabIndex = 4;
-            this.EventName.Text = "Event Name";
-            this.EventName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.DateName.AutoSize = true;
+            this.DateName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DateName.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.DateName.Location = new System.Drawing.Point(3, 0);
+            this.DateName.Name = "DateName";
+            this.DateName.Size = new System.Drawing.Size(94, 21);
+            this.DateName.TabIndex = 4;
+            this.DateName.Text = "Event Name";
+            this.DateName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // mainMenu1
             // 
@@ -138,9 +138,9 @@
         private System.Windows.Forms.MenuItem menuItem1;
         private System.Windows.Forms.MenuItem menuItem2;
         private System.Windows.Forms.MenuItem menuItem3;
-        private System.Windows.Forms.Label Time;
+        private System.Windows.Forms.Label UnitValue;
         private System.Windows.Forms.Label Date;
-        private System.Windows.Forms.Label EventName;
+        private System.Windows.Forms.Label DateName;
     }
 }
 

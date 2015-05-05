@@ -7,32 +7,21 @@ using System.Timers;
 
 namespace CountDownLibrary {
     class CountDown : ICountDown {
-        private IDictionary<ConverterType, Converter> converters = new Dictionary<ConverterType, Converter>();
-        public IDate Date { get; private set; }
+        private Date date;
+        private Values converters;
         public CountDown() {
-            Date = new Date();
-            converters.Add(ConverterType.Minutes, new Minutes(Date));
-            converters.Add(ConverterType.Weeks, new Weeks(Date));
+            date = new Date();
+            converters = new Values(date);
         }
 
-        public void AddObserver(ConverterType type, Action<IConverter> action){
-            Converter converter = GetConverter(type);
-            if(converter != null) {
-                converter.Changed += action;
+        public IValue GetValue(UnitType type) {
+            return converters.GetValue(type);
+        }
+
+        public IDate Date {
+            get {
+                return date; 
             }
-        }
-
-        public void RemoveObserver(ConverterType type, Action<IConverter> action) {
-            Converter converter = GetConverter(type);
-            if (converter != null) {
-                converter.Changed -= action;
-            }
-        }
-
-        private Converter GetConverter(ConverterType type) {
-            Converter converter;
-            converters.TryGetValue(type, out converter);
-            return converter;
         }
     }
 }
