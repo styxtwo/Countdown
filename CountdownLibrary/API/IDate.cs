@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace CountDownLibrary {
     public interface IDate {
+        event Action NameChanged;
+        event Action DateChanged;
         DateTime DateTime { get; set; }
         String Name { get; set; }
     }

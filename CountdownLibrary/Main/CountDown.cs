@@ -8,16 +8,16 @@ using System.Timers;
 namespace CountDownLibrary {
     class CountDown : ICountDown {
         private Date date;
-        private Values converters;
+        private RemainingTime remainingTime;
         public CountDown() {
             date = new Date();
-            converters = new Values(date);
+            remainingTime = new RemainingTime(date);
         }
 
-        public IValue GetValue(UnitType type) {
-            return converters.GetValue(type);
+        public IUnitTime RemainingTime(Unit unit) {
+            return remainingTime.InUnit(unit);
         }
-
+        
         public IDate Date {
             get {
                 return date; 

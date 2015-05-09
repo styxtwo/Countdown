@@ -39,19 +39,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="API\IUnit.cs" />
+    <Compile Include="API\IUnitInfo.cs" />
     <Compile Include="API\ICountDown.cs" />
-    <Compile Include="API\IValue.cs" />
-    <Compile Include="Main\Values\Poller.cs" />
-    <Compile Include="Main\Values\TimeConstants.cs" />
-    <Compile Include="Main\Values\Unit.cs" />
-    <Compile Include="Main\Values\Units\Days.cs" />
-    <Compile Include="Main\Values\Units\Seconds.cs" />
-    <Compile Include="Main\Values\Value.cs" />
-    <Compile Include="Main\Values\Values.cs" />
-    <Compile Include="Main\Values\UnitType.cs" />
-    <Compile Include="Main\Values\Units\Minutes.cs" />
-    <Compile Include="Main\Values\Units\Weeks.cs" />
+    <Compile Include="API\IUnitTime.cs" />
+    <Compile Include="Main\ActionExtension.cs" />
+    <Compile Include="Main\Poller.cs" />
+    <Compile Include="Main\Units\UnitTime.cs" />
+    <Compile Include="Main\Units\UnitInfo.cs" />
+    <Compile Include="Main\Units\Infos\Days.cs" />
+    <Compile Include="Main\Units\Infos\ElephantGestationPeriods.cs" />
+    <Compile Include="Main\Units\Infos\Seconds.cs" />
+    <Compile Include="Main\Units\Infos\WeekDays.cs" />
+    <Compile Include="Main\Units\Infos\WorkingHours.cs" />
+    <Compile Include="Main\RemainingTime.cs" />
+    <Compile Include="Main\Units\Unit.cs" />
+    <Compile Include="Main\Units\Infos\Minutes.cs" />
+    <Compile Include="Main\Units\Infos\Weeks.cs" />
     <Compile Include="Main\CountDown.cs" />
     <Compile Include="Main\CountDownFactory.cs" />
     <Compile Include="Main\Date.cs" />

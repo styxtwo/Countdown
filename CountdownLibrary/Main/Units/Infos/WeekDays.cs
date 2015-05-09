@@ -5,10 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace CountDownLibrary {
-    public class WeekDays : IConverter {
-        public double Convert(TimeSpan timeSpan) {
-            DateTime start = DateTime.Now;
-            DateTime end = start + timeSpan;
+    class WeekDays : UnitInfo {
+        public override double Convert(DateTime start, DateTime end) {
             double weekDays = 1 + ((end - start).TotalDays * 5 -
                 (start.DayOfWeek - end.DayOfWeek) * 2) / 7;
 
@@ -18,8 +16,12 @@ namespace CountDownLibrary {
             return weekDays;
         }
 
-        public string Unit() {
-            return "Week Days";
+        public override int Decimals {
+            get { return 0; }
+        }
+
+        public override string UnitName {
+            get { return "Week Days"; }
         }
     }
 }

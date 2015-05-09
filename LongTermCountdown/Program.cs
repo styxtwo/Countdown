@@ -25,7 +25,6 @@ namespace LongCountDown {
             countDown.Date.Name = "Leaving";
 
             printer = new Printer(countDown);
-            new Printer(countDown);
             gui = new Gui(countDown);
 
         }

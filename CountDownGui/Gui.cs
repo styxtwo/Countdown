@@ -8,8 +8,6 @@ using System.Windows.Forms;
 
 namespace GUI {
     public class Gui {
-
-        private BackgroundWorker worker = new BackgroundWorker();
         private ICountDown countDown;
         private MainScreen mainScreen;
         public Gui(ICountDown countDown) {

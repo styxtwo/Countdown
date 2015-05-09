@@ -6,11 +6,32 @@ using System.Threading.Tasks;
 
 namespace CountDownLibrary {
     class Date : IDate {
-        public DateTime DateTime { get; set; }
-        public String Name { get; set; }
-        public TimeSpan TimeLeft {
+        public event Action DateChanged;
+        public event Action NameChanged;
+
+        private DateTime dateTime;
+        public DateTime DateTime {
+            get{
+                return dateTime;
+            }
+            set {
+                if (dateTime != value) {
+                    DateChanged.NullSafeInvoke();
+                    dateTime = value;
+                }
+            }
+        }
+
+        private String name;
+        public String Name {
             get {
-                return DateTime - DateTime.Now;
+                return name;
+            }
+            set {
+                if (name != value) {
+                    NameChanged.NullSafeInvoke();
+                    name = value;
+                }
             }
         }
     }

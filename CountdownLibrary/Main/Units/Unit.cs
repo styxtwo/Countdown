@@ -5,10 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace CountDownLibrary {
-    public enum UnitType {
+    public enum Unit {
         Seconds,
         Minutes,
+        WeekDays,
+        WorkingHours,
         Days,
         Weeks,
+        ElephantGestationPeriods,
     }
 }

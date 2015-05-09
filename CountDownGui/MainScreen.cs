@@ -12,11 +12,11 @@ using System.Windows.Forms;
 namespace GUI {
     public partial class MainScreen : Form {
         delegate void UpdateCallback();
-        private CountDownData data;
+        private DisplayData data;
         
         public MainScreen(ICountDown countDown) {
             InitializeComponent();
-            data = new CountDownData(countDown, UnitType.Days);
+            data = new DisplayData(countDown, Unit.Minutes);
             data.DataChangedEvent += DataChanged;
             DataChanged();
         }
@@ -25,8 +25,8 @@ namespace GUI {
             if (this.InvokeRequired) {
                 UpdateCallback d = new UpdateCallback(DataChanged);
                 this.Invoke(d);
+                return;
             }
-            this.DateName.Text = data.DateName;
             this.UnitValue.Text = data.UnitValue;
             this.Date.Text = data.Date;
         }

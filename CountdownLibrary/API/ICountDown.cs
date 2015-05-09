@@ -7,6 +7,6 @@ using System.Threading.Tasks;
 namespace CountDownLibrary {
     public interface ICountDown {
         IDate Date { get; }
-        IValue GetValue(UnitType type);
+        IUnitTime RemainingTime(Unit unit);
     }
 }
