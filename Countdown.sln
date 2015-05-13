@@ -3,13 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CountDownLibrary", "CountdownLibrary\CountDownLibrary.csproj", "{5D43E751-E2EC-4FF8-99FE-84C095E7A731}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CountDown", "CountDown\CountDown.csproj", "{5D43E751-E2EC-4FF8-99FE-84C095E7A731}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LongCountDown", "LongTermCountdown\LongCountDown.csproj", "{D8126FA0-3CEC-4313-AE96-4A067326FAE7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Main", "Main\Main.csproj", "{D8126FA0-3CEC-4313-AE96-4A067326FAE7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimplePrinter", "SimplePrinter\SimplePrinter.csproj", "{66E1F31C-3264-483A-BBCA-04A3DE0C5FE4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DebugPrinter", "DebugPrinter\DebugPrinter.csproj", "{66E1F31C-3264-483A-BBCA-04A3DE0C5FE4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUI", "CountDownGui\GUI.csproj", "{8369D566-E7F0-4D34-99F6-72EC9201F3C0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUI", "Gui\GUI.csproj", "{8369D566-E7F0-4D34-99F6-72EC9201F3C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utilities", "Utilities\Utilities.csproj", "{4E8E51C5-0306-4566-938B-1F52D585D827}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XMLPersistence", "XMLPersistence\XMLPersistence.csproj", "{2323D5F7-6A79-47AC-9D32-23A4234E4953}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,14 @@ Global
 		{8369D566-E7F0-4D34-99F6-72EC9201F3C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8369D566-E7F0-4D34-99F6-72EC9201F3C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8369D566-E7F0-4D34-99F6-72EC9201F3C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E8E51C5-0306-4566-938B-1F52D585D827}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E8E51C5-0306-4566-938B-1F52D585D827}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E8E51C5-0306-4566-938B-1F52D585D827}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E8E51C5-0306-4566-938B-1F52D585D827}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2323D5F7-6A79-47AC-9D32-23A4234E4953}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2323D5F7-6A79-47AC-9D32-23A4234E4953}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2323D5F7-6A79-47AC-9D32-23A4234E4953}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2323D5F7-6A79-47AC-9D32-23A4234E4953}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
