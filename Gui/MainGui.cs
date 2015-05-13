@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CountDown.Domain.Api;
+using System.Drawing;
 
 namespace CountDown.Gui {
     public class MainGui {

@@ -9,6 +9,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using CountDown.Domain.Api;
 using XMLPersistence;
+using System.Drawing;
 
 namespace CountDown.Main {
     class Program {
