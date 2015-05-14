@@ -35,5 +35,10 @@ namespace XMLPersistence
                 return data;
             }
         }
+
+        public void Dispose() {
+            countDown.Date.DateChanged -= DateChanged;
+            countDown.Date.NameChanged -= NameChanged; 
+        }
     }
 }

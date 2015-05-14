@@ -52,25 +52,30 @@
   <ItemGroup>
     <Compile Include="DisplayData.cs" />
     <Compile Include="DisplayDataList.cs" />
-    <Compile Include="Screens\DateSelectionScreen.cs">
+    <Compile Include="Icon\IconContextMenu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Icon\IconHandler.cs" />
+    <Compile Include="Icon\NotifyIconWrapper.cs" />
+    <Compile Include="Screens\DateSelectionForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Screens\DateSelectionScreen.Designer.cs">
-      <DependentUpon>DateSelectionScreen.cs</DependentUpon>
+    <Compile Include="Screens\DateSelectionForm.Designer.cs">
+      <DependentUpon>DateSelectionForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Screens\MainScreen.cs">
+    <Compile Include="Screens\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Screens\MainScreen.Designer.cs">
-      <DependentUpon>MainScreen.cs</DependentUpon>
+    <Compile Include="Screens\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MainGui.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Screens\DateSelectionScreen.resx">
-      <DependentUpon>DateSelectionScreen.cs</DependentUpon>
+    <EmbeddedResource Include="Screens\DateSelectionForm.resx">
+      <DependentUpon>DateSelectionForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screens\MainScreen.resx">
-      <DependentUpon>MainScreen.cs</DependentUpon>
+    <EmbeddedResource Include="Screens\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

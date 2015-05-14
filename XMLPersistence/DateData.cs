@@ -30,7 +30,6 @@ namespace XMLPersistence {
                     if (reader.IsStartElement()) {
                         switch (reader.Name) {
                             case "DateTime":
-                                System.Diagnostics.Debug.WriteLine("Val: "+reader.Value.Trim());
                                 if (reader.Read()) {
                                     dateTime = DateTime.Parse(reader.Value.Trim());
                                 }

@@ -1,11 +1,11 @@
 ﻿using CountDown.Domain;
+using CountDown.Domain.Api;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using CountDown.Domain.Api;
 
 namespace SimplePrinter {
     public class Printer {
@@ -17,6 +17,10 @@ namespace SimplePrinter {
 
         public void Print(IUnitTime value) {
             System.Diagnostics.Debug.WriteLine(countDown.Date.Name + " in " + value.Value + " " + value.Info.UnitName);
+        }
+
+        public void Dispose() {
+            countDown.RemainingTime(Unit.Weeks).ValueChanged -= Print;
         }
     }
 }

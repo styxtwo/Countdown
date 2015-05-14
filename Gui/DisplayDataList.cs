@@ -5,47 +5,63 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Utilities.Extensions;
 
 namespace CountDown.Gui {
     public class DisplayDataList {
+        public event Action SelectedDataChangedEvent;
         private IList<DisplayData> data = new List<DisplayData>();
         private int index;
-        public DisplayDataList(ICountDown countdown) {
+        private DisplayData selectedData;
+        public DisplayDataList(ICountDown countdown, Unit selectedUnit) {
             foreach (Unit unit in Enum.GetValues(typeof(Unit))) {
                 data.Add(new DisplayData(countdown, unit));
-                if (unit == Unit.Days) {
-                    index = data.Count - 1;
+                if (unit == selectedUnit) {
+                    index = data.Count - 1; 
                 }
             }
+            selectedData = data[index];
         }
 
-        public DisplayData Current() {
-            return data[index];
+        public DisplayData Selected() {
+            return selectedData;
         }
 
-        public DisplayData Next() {
+        public void Next() {
             index++;
             if (index >= data.Count) {
                 index = 0;
             }
-            return data[index];
+            SetSelectedData(index);
         }
 
-        public DisplayData Previous() {
+        public void Previous() {
             index--;
             if (index < 0) {
                 index = data.Count - 1;
             }
-            return data[index];
+            SetSelectedData(index);
         }
 
-        public DisplayData Random() {
+        public void Random() {
             int prevIndex = index;
             do {
                 Random random = new Random();
                 index = random.Next(data.Count);
             } while (prevIndex == index);
-            return data[index];
+            SetSelectedData(index);
+        }
+
+        private void SetSelectedData(int index) {
+            selectedData.DataChangedEvent -= SelectedDataChangedEvent;
+            selectedData = data[index];
+            selectedData.DataChangedEvent += SelectedDataChangedEvent;
+            SelectedDataChangedEvent.NullSafeInvoke();
+        }
+
+        internal void Dispose() {
+            SelectedDataChangedEvent = null;
+            selectedData.DataChangedEvent -= SelectedDataChangedEvent;
         }
     }
 }
