@@ -25,7 +25,7 @@
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DateSelectionForm));
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.CancelButton = new System.Windows.Forms.Button();
+            this.CancelSelectButton = new System.Windows.Forms.Button();
             this.OkButton = new System.Windows.Forms.Button();
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
@@ -39,13 +39,13 @@
             // 
             // CancelButton
             // 
-            this.CancelButton.Location = new System.Drawing.Point(12, 64);
-            this.CancelButton.Name = "CancelButton";
-            this.CancelButton.Size = new System.Drawing.Size(75, 23);
-            this.CancelButton.TabIndex = 1;
-            this.CancelButton.Text = "Cancel";
-            this.CancelButton.UseVisualStyleBackColor = true;
-            this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
+            this.CancelSelectButton.Location = new System.Drawing.Point(12, 64);
+            this.CancelSelectButton.Name = "CancelButton";
+            this.CancelSelectButton.Size = new System.Drawing.Size(75, 23);
+            this.CancelSelectButton.TabIndex = 1;
+            this.CancelSelectButton.Text = "Cancel";
+            this.CancelSelectButton.UseVisualStyleBackColor = true;
+            this.CancelSelectButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
             // OkButton
             // 
@@ -71,7 +71,7 @@
             this.ClientSize = new System.Drawing.Size(226, 93);
             this.Controls.Add(this.nameTextBox);
             this.Controls.Add(this.OkButton);
-            this.Controls.Add(this.CancelButton);
+            this.Controls.Add(this.CancelSelectButton);
             this.Controls.Add(this.dateTimePicker);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -84,7 +84,7 @@
         #endregion
 
         private System.Windows.Forms.DateTimePicker dateTimePicker;
-        private System.Windows.Forms.Button CancelButton;
+        private System.Windows.Forms.Button CancelSelectButton;
         private System.Windows.Forms.Button OkButton;
         private System.Windows.Forms.TextBox nameTextBox;
     }

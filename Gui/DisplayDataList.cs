@@ -17,10 +17,10 @@ namespace CountDown.Gui {
             foreach (Unit unit in Enum.GetValues(typeof(Unit))) {
                 data.Add(new DisplayData(countdown, unit));
                 if (unit == selectedUnit) {
-                    index = data.Count - 1; 
+                    index = data.Count - 1;
                 }
             }
-            selectedData = data[index];
+            SetSelectedData(index);
         }
 
         public DisplayData Selected() {
@@ -53,9 +53,15 @@ namespace CountDown.Gui {
         }
 
         private void SetSelectedData(int index) {
-            selectedData.DataChangedEvent -= SelectedDataChangedEvent;
+            if (selectedData != null) {
+                selectedData.DataChangedEvent -= DataChanged;
+            }
             selectedData = data[index];
-            selectedData.DataChangedEvent += SelectedDataChangedEvent;
+            selectedData.DataChangedEvent += DataChanged;
+            SelectedDataChangedEvent.NullSafeInvoke();
+        }
+
+        private void DataChanged() {
             SelectedDataChangedEvent.NullSafeInvoke();
         }
 

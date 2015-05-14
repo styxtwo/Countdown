@@ -29,7 +29,7 @@ namespace CountDown.Gui {
             iconHandler = new IconHandler(data);
             dateSelectionForm = new DateSelectionForm(countDown);
             mainForm = new MainForm(data, dateSelectionForm);
-
+            
             mainForm.ClosedEvent += MainFormClosed;
             iconHandler.Hide += IconClosed;
             iconHandler.Exit += ExitEvent;
@@ -37,7 +37,8 @@ namespace CountDown.Gui {
 
         [STAThread]
         public void Start() {
-            Application.Run(mainForm);   
+            iconHandler.Show();
+            Application.Run();
         }
 
         private void IconClosed() {
@@ -62,6 +63,7 @@ namespace CountDown.Gui {
             dateSelectionForm.Dispose();
             iconHandler.Dispose();
             mainForm.Dispose();
+            Application.Exit();
         }
     }
 }

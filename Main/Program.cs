@@ -49,7 +49,7 @@ namespace CountDown.Main {
             String keyLocation = "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run";
             String appLocation = System.Reflection.Assembly.GetExecutingAssembly().Location;
             RegistryKey key = Registry.CurrentUser.OpenSubKey(keyLocation, true);
-            key.SetValue("R-LongTermCountDown", appLocation);
+            key.SetValue("LongTermCountDown", appLocation);
         }
 
         public void Dispose() {
