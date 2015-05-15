@@ -1,17 +1,12 @@
 ﻿using CountDown.Domain;
+using CountDown.Domain.Api;
 using CountDown.Gui;
 using SimplePrinter;
-using System;
-using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
-using CountDown.Domain.Api;
+using System.Windows.Forms;
 using XMLPersistence;
-using System.Drawing;
-using System.ComponentModel;
-using Microsoft.Win32;
 
 namespace CountDown.Main {
     class Program {
@@ -19,15 +14,19 @@ namespace CountDown.Main {
         static void Main(string[] args) {
             program = new Program(args);
         }
-
+        private bool showGui;
         private MainGui gui;
         private Printer printer;
         private ICountDown countDown;
         private Persistance xmlPersistance;
 
         public Program(string[] args) {
-            if (!args.Any() || args[0] != "debug") {
-                AddRegistryKey();
+            if (args.Contains("installer")) {
+                Process.Start(Application.ExecutablePath, "after_install");
+                return;
+            }
+            if (args.Contains("after_install")) {
+                showGui = true;
             }
             Start();
         }
@@ -36,20 +35,13 @@ namespace CountDown.Main {
             xmlPersistance = new Persistance();
             countDown = CountDownFactory.Create(xmlPersistance.Data);
             printer = new Printer(countDown);
-            gui = new MainGui(countDown);
+            gui = new MainGui(countDown, showGui);
 
             xmlPersistance.UpdateOnChange(countDown);
             gui.Exit += Dispose;
 
             Thread guiThread = new Thread(gui.Start);
             guiThread.Start();
-        }
-
-        private void AddRegistryKey() {
-            String keyLocation = "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run";
-            String appLocation = System.Reflection.Assembly.GetExecutingAssembly().Location;
-            RegistryKey key = Registry.CurrentUser.OpenSubKey(keyLocation, true);
-            key.SetValue("LongTermCountDown", appLocation);
         }
 
         public void Dispose() {

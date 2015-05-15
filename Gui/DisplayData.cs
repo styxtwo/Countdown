@@ -1,12 +1,7 @@
 ﻿using CountDown.Domain;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using Utilities.Extensions;
-using System.Threading.Tasks;
 using CountDown.Domain.Api;
+using System;
+using Utilities.Extensions;
 
 namespace CountDown.Gui {
     public class DisplayData {

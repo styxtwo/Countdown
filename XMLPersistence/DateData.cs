@@ -1,22 +1,22 @@
 ﻿using CountDown.Domain.Api;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Reflection;
 using System.Xml;
 
 namespace XMLPersistence {
     class DateData : IDateData {
         private static readonly string FILE_NAME = "date.xml";
+        private static readonly string FILE_PATH = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+        private static readonly string FILE_LOCATION = FILE_PATH + @"\" + FILE_NAME;
+
         private static readonly DateTime DEFAULT_DATE = DateTime.Today;
         private static readonly String DEFAULT_NAME = "";
         private DateTime dateTime;
         private String name;
 
         public DateData() {
-            if (File.Exists(FILE_NAME)) {
+            if (File.Exists(FILE_LOCATION)) {
                 ReadValues();
                 return;
             }
@@ -25,7 +25,7 @@ namespace XMLPersistence {
         }
 
         private void ReadValues() {
-            using (XmlReader reader = XmlReader.Create(FILE_NAME)) {
+            using (XmlReader reader = XmlReader.Create(FILE_LOCATION)) {
                 while (reader.Read()) {
                     if (reader.IsStartElement()) {
                         switch (reader.Name) {
@@ -46,7 +46,7 @@ namespace XMLPersistence {
         }
 
         private void Save() {
-            using (XmlWriter writer = XmlWriter.Create(FILE_NAME)) {
+            using (XmlWriter writer = XmlWriter.Create(FILE_LOCATION)) {
                 writer.WriteStartDocument();
                 writer.WriteStartElement("Date");
 

@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CountDown.Domain.Api;
+using System;
 using Utilities.Extensions;
-using CountDown.Domain.Api;
 
 namespace CountDown.Domain {
     class UnitTime : IUnitTime {

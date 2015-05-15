@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Utilities.Extensions;
 
@@ -36,6 +31,9 @@ namespace CountDown.Gui {
         }
 
         private void DisposeIcon() {
+            if (icon == null) {
+                return;
+            }
             icon.Visible = false;
             icon.Dispose();
             icon.DoubleClick -= DoubleClickEvent;

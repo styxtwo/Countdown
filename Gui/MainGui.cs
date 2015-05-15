@@ -1,14 +1,8 @@
 ﻿using CountDown.Domain;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using CountDown.Domain.Api;
-using System.Drawing;
+using System;
+using System.Windows.Forms;
 using Utilities.Extensions;
-using System.Threading;
 
 namespace CountDown.Gui {
     public class MainGui {
@@ -19,9 +13,11 @@ namespace CountDown.Gui {
         private DateSelectionForm dateSelectionForm;
         private IconHandler iconHandler;
         private MainForm mainForm;
-        public MainGui(ICountDown countDown) {
+        private bool showMain;
+        public MainGui(ICountDown countDown, bool showMain) {
             this.countDown = countDown;
             this.data = new DisplayDataList(countDown, Unit.Days);
+            this.showMain = showMain;
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
@@ -37,7 +33,12 @@ namespace CountDown.Gui {
 
         [STAThread]
         public void Start() {
-            iconHandler.Show();
+            if (showMain) {
+                mainForm.Show();
+            }
+            else {
+                iconHandler.Show();
+            }
             Application.Run();
         }
 

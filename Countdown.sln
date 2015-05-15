@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utilities", "Utilities\Util
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XMLPersistence", "XMLPersistence\XMLPersistence.csproj", "{2323D5F7-6A79-47AC-9D32-23A4234E4953}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{19BAAC44-CC2D-4175-B725-7A323051DA2B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,8 @@ Global
 		{2323D5F7-6A79-47AC-9D32-23A4234E4953}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2323D5F7-6A79-47AC-9D32-23A4234E4953}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2323D5F7-6A79-47AC-9D32-23A4234E4953}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19BAAC44-CC2D-4175-B725-7A323051DA2B}.Debug|Any CPU.ActiveCfg = Debug
+		{19BAAC44-CC2D-4175-B725-7A323051DA2B}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
