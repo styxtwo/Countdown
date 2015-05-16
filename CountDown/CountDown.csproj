@@ -45,6 +45,7 @@
     <Compile Include="API\ICountDown.cs" />
     <Compile Include="API\IUnitTime.cs" />
     <Compile Include="Main\Poller.cs" />
+    <Compile Include="Main\Units\Converters\BabiesBorn.cs" />
     <Compile Include="Main\Units\Converters\HeartBeats.cs" />
     <Compile Include="Main\Units\Converters\Jiffies.cs" />
     <Compile Include="Main\Units\Converters\Hours.cs" />

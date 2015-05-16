@@ -25,6 +25,7 @@ namespace CountDown.Domain {
             AddUnitTime(date, Unit.KilometersLightTraveled, new KilometersLightTraveled());
             AddUnitTime(date, Unit.Jiffies, new Jiffies());
             AddUnitTime(date, Unit.HeartBeats, new HeartBeats());
+            AddUnitTime(date, Unit.BabiesBorn, new BabiesBorn());
         }
 
         private void AddUnitTime(Date date, Unit unit, UnitConverter converter) {

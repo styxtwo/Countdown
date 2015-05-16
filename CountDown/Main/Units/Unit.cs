@@ -12,6 +12,7 @@ namespace CountDown.Domain {
         ElephantGestationPeriods,
 
         KilometersLightTraveled,
-        HeartBeats
+        HeartBeats,
+        BabiesBorn
     }
 }
