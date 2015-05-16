@@ -22,6 +22,7 @@ namespace CountDown.Gui {
         private void CustomInit() {
             MinimizeBox = false;
             MaximizeBox = false;
+            this.FormClosing += Screen_Closing;
         }
 
         private void OkButton_Click(object sender, EventArgs e) {
@@ -32,6 +33,13 @@ namespace CountDown.Gui {
 
         private void CancelButton_Click(object sender, EventArgs e) {
             this.Hide();
+        }
+
+        private void Screen_Closing(object sender, FormClosingEventArgs e) {
+            if (e.CloseReason == CloseReason.UserClosing) {
+                e.Cancel = true;
+                Hide();
+            }
         }
     }
 }

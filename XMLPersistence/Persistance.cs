@@ -13,7 +13,8 @@ namespace XMLPersistence
         public void UpdateOnChange(ICountDown countDown) {
             this.countDown = countDown;
             countDown.Date.DateChanged += DateChanged;
-            countDown.Date.NameChanged += NameChanged; 
+            countDown.Date.NameChanged += NameChanged;
+            countDown.Date.MainUnitChanged += UnitChanged; 
         }
 
         private void NameChanged() {
@@ -24,6 +25,9 @@ namespace XMLPersistence
             data.DateTime = countDown.Date.DateTime;
         }
 
+        private void UnitChanged() {
+            data.MainUnit = countDown.Date.MainUnit;
+        }
 
         public IDateData Data {
             get {
@@ -33,7 +37,8 @@ namespace XMLPersistence
 
         public void Dispose() {
             countDown.Date.DateChanged -= DateChanged;
-            countDown.Date.NameChanged -= NameChanged; 
+            countDown.Date.NameChanged -= NameChanged;
+            countDown.Date.MainUnitChanged -= UnitChanged; 
         }
     }
 }

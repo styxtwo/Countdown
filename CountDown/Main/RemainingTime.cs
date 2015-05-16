@@ -21,6 +21,7 @@ namespace CountDown.Domain {
             AddUnitTime(date, Unit.Days, new Days());
             AddUnitTime(date, Unit.Weeks, new Weeks());
             AddUnitTime(date, Unit.ElephantGestationPeriods, new ElephantGestationPeriods());
+            AddUnitTime(date, Unit.Hours, new Hours());
         }
 
         private void AddUnitTime(Date date, Unit unit, UnitConverter converter) {

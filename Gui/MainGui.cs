@@ -14,9 +14,9 @@ namespace CountDown.Gui {
         private IconHandler iconHandler;
         private MainForm mainForm;
         private bool showMain;
-        public MainGui(ICountDown countDown, bool showMain) {
+        public MainGui(ICountDown countDown, bool showMain, IDateData dateData) {
             this.countDown = countDown;
-            this.data = new DisplayDataList(countDown, Unit.Days);
+            this.data = new DisplayDataList(countDown, dateData.MainUnit);
             this.showMain = showMain;
 
             Application.EnableVisualStyles();

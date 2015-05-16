@@ -35,7 +35,7 @@ namespace CountDown.Main {
             xmlPersistance = new Persistance();
             countDown = CountDownFactory.Create(xmlPersistance.Data);
             printer = new Printer(countDown);
-            gui = new MainGui(countDown, showGui);
+            gui = new MainGui(countDown, showGui, xmlPersistance.Data);
 
             xmlPersistance.UpdateOnChange(countDown);
             gui.Exit += Dispose;

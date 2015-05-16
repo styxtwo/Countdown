@@ -14,5 +14,10 @@ namespace CountDown.Domain.Tests {
         public string Name {
             get { return "MockDate"; }
         }
+
+
+        public Unit MainUnit {
+            get { return Unit.Days; }
+        }
     }
 }

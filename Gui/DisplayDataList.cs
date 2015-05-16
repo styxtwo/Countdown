@@ -10,6 +10,7 @@ namespace CountDown.Gui {
         private IList<DisplayData> data = new List<DisplayData>();
         private int index;
         private DisplayData selectedData;
+        private IDate date;
         public DisplayDataList(ICountDown countdown, Unit selectedUnit) {
             foreach (Unit unit in Enum.GetValues(typeof(Unit))) {
                 data.Add(new DisplayData(countdown, unit));
@@ -17,6 +18,7 @@ namespace CountDown.Gui {
                     index = data.Count - 1;
                 }
             }
+            this.date = countdown.Date;
             SetSelectedData(index);
         }
 
@@ -56,6 +58,7 @@ namespace CountDown.Gui {
             selectedData = data[index];
             selectedData.DataChangedEvent += DataChanged;
             SelectedDataChangedEvent.NullSafeInvoke();
+            date.MainUnit = selectedData.Unit;
         }
 
         private void DataChanged() {
