@@ -22,6 +22,9 @@ namespace CountDown.Domain {
             AddUnitTime(date, Unit.Weeks, new Weeks());
             AddUnitTime(date, Unit.ElephantGestationPeriods, new ElephantGestationPeriods());
             AddUnitTime(date, Unit.Hours, new Hours());
+            AddUnitTime(date, Unit.KilometersLightTraveled, new KilometersLightTraveled());
+            AddUnitTime(date, Unit.Jiffies, new Jiffies());
+            AddUnitTime(date, Unit.HeartBeats, new HeartBeats());
         }
 
         private void AddUnitTime(Date date, Unit unit, UnitConverter converter) {

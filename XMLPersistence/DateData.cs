@@ -37,31 +37,24 @@ namespace XMLPersistence {
         private void ReadValues() {
             using (XmlReader reader = XmlReader.Create(FILE_LOCATION)) {
                 while (reader.Read()) {
-                    System.Diagnostics.Debug.WriteLine("Read" + reader.Value);
                     if (reader.IsStartElement()) {
                         switch (reader.Name) {
                             case "DateTime":
-                                System.Diagnostics.Debug.WriteLine("DateTime");
                                 if (reader.Read()) {
                                     dateTime = DateTime.Parse(reader.Value.Trim());
                                 }
                                 break;
                             case "Name":
-                                System.Diagnostics.Debug.WriteLine("Name");
                                 if (reader.Read()) {
                                     name = reader.Value;
-                                    System.Diagnostics.Debug.WriteLine("VAL:" + reader.Value);
                                 }
                                 break;
                             case "Unit":
-                                System.Diagnostics.Debug.WriteLine("UNIT");
                                 if (reader.Read()) {
                                     bool success = Enum.TryParse(reader.Value, true, out unit);
                                     if (!success) {
-                                        System.Diagnostics.Debug.WriteLine("ERROOOOROROORO");
                                         throw (new ArgumentException("Unable to parse: " + reader.Value));
                                     }
-                                    System.Diagnostics.Debug.WriteLine("PARSED TO: "+ unit);
                                 }
                                 break;
                         }

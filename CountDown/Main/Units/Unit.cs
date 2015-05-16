@@ -1,6 +1,7 @@
 ﻿
 namespace CountDown.Domain {
     public enum Unit {
+        Jiffies,
         Seconds,
         Minutes,
         Hours,
@@ -9,5 +10,8 @@ namespace CountDown.Domain {
         Days,
         Weeks,
         ElephantGestationPeriods,
+
+        KilometersLightTraveled,
+        HeartBeats
     }
 }
