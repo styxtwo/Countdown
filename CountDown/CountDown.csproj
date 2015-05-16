@@ -30,6 +30,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -44,6 +45,7 @@
     <Compile Include="API\ICountDown.cs" />
     <Compile Include="API\IUnitTime.cs" />
     <Compile Include="Main\Poller.cs" />
+    <Compile Include="Main\Units\Converters\Hours.cs" />
     <Compile Include="Main\Units\UnitTime.cs" />
     <Compile Include="Main\Units\UnitConverter.cs" />
     <Compile Include="Main\Units\Converters\Days.cs" />
@@ -60,15 +62,28 @@
     <Compile Include="Main\Date.cs" />
     <Compile Include="API\IDate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tests\Converters\WorkingHoursTest.cs" />
+    <Compile Include="Tests\Converters\WeekDaysTest.cs" />
+    <Compile Include="Tests\Converters\WeekTest.cs" />
+    <Compile Include="Tests\Converters\HoursTest.cs" />
+    <Compile Include="Tests\Converters\SecondsTest.cs" />
+    <Compile Include="Tests\Converters\MinutesTest.cs" />
+    <Compile Include="Tests\Converters\ElephantPeriodTest.cs" />
+    <Compile Include="Tests\DateDataMock.cs" />
+    <Compile Include="Tests\PollerTest.cs" />
+    <Compile Include="Tests\RemainingTimeTest.cs" />
+    <Compile Include="Tests\DateTest.cs" />
+    <Compile Include="Tests\Converters\DaysTest.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Tests\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Utilities\Utilities.csproj">
       <Project>{4e8e51c5-0306-4566-938b-1f52d585d827}</Project>
       <Name>Utilities</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -6,8 +6,8 @@ namespace CountDown.Domain {
             double weekDays = 1 + ((end - start).TotalDays * 5 -
                 (start.DayOfWeek - end.DayOfWeek) * 2) / 7;
 
-            if ((int)end.DayOfWeek == 6) weekDays--;
-            if ((int)end.DayOfWeek == 0) weekDays--;
+            if (end.DayOfWeek == DayOfWeek.Saturday) weekDays--;
+            if (start.DayOfWeek == DayOfWeek.Sunday) weekDays--;
 
             return weekDays;
         }

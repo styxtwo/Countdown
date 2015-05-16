@@ -27,7 +27,7 @@ namespace CountDown.Domain {
             unitTimes.Add(unit, new UnitTime(date, converter));
         } 
 
-        public void Update() {
+        private void Update() {
             foreach (UnitTime time in unitTimes.Values) {
                 time.Update();
             }
