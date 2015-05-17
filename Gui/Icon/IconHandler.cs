@@ -46,7 +46,7 @@ namespace CountDown.Gui {
         }
 
         void SelectedDataChangedEvent() {
-            String text = data.Selected().UnitValue + " " + data.Selected().UnitName + " Remaining.";
+            String text = data.Current().UnitValue + " " + data.Current().UnitName + " Remaining.";
             icon.ShowBalloon(text, "Countdown", ToolTipIcon.Info, 200);
         }
 

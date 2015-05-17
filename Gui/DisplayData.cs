@@ -9,15 +9,15 @@ namespace CountDown.Gui {
 
         private IUnitTime unitTime;
         private IDate date;
+        private Unit unit;
 
         public String UnitValue { get; private set; }
         public String UnitName { get; private set; }
         public String DateName { get; private set; }
         public String Date { get; private set; }
-        public Unit Unit { get; private set; }
 
         public DisplayData(ICountDown countDown, Unit unit) {
-            this.Unit = unit;
+            this.unit = unit;
             this.unitTime = countDown.RemainingTime(unit);
             this.date = countDown.Date;
 
@@ -47,6 +47,14 @@ namespace CountDown.Gui {
 
         public void Dispose() {
            unitTime.ValueChanged -= Update;
+        }
+
+        public bool IsSelected() {
+            return date.MainUnit == unit;
+        }
+
+        public void Select() {
+            date.MainUnit = unit;
         }
      }
 }

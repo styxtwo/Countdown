@@ -22,7 +22,7 @@ namespace CountDown.Gui {
             SetSelectedData(index);
         }
 
-        public DisplayData Selected() {
+        public DisplayData Current() {
             return selectedData;
         }
 
@@ -58,7 +58,6 @@ namespace CountDown.Gui {
             selectedData = data[index];
             selectedData.DataChangedEvent += DataChanged;
             SelectedDataChangedEvent.NullSafeInvoke();
-            date.MainUnit = selectedData.Unit;
         }
 
         private void DataChanged() {
