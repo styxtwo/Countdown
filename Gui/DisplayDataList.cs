@@ -19,7 +19,7 @@ namespace CountDown.Gui {
                 }
             }
             this.date = countdown.Date;
-            SetCurrentData(index);
+            SetCurrentData();
         }
 
         public DisplayData Current() {
@@ -31,7 +31,7 @@ namespace CountDown.Gui {
             if (index >= data.Count) {
                 index = 0;
             }
-            SetCurrentData(index);
+            SetCurrentData();
         }
 
         public void Previous() {
@@ -39,7 +39,7 @@ namespace CountDown.Gui {
             if (index < 0) {
                 index = data.Count - 1;
             }
-            SetCurrentData(index);
+            SetCurrentData();
         }
 
         public void Random() {
@@ -48,18 +48,14 @@ namespace CountDown.Gui {
                 Random random = new Random();
                 index = random.Next(data.Count);
             } while (prevIndex == index);
-            SetCurrentData(index);
+            SetCurrentData();
         }
 
-        private void SetCurrentData(int index) {
-            SetCurrentData(data[index]);
-        }
-
-        private void SetCurrentData(DisplayData displayData) {
+        private void SetCurrentData() {
             if (currentData != null) {
                 currentData.DataChangedEvent -= DataChanged;
             }
-            currentData = displayData;
+            currentData = data[index];
             currentData.DataChangedEvent += DataChanged;
             CurrentDataChangedEvent.NullSafeInvoke();
         }
@@ -67,7 +63,8 @@ namespace CountDown.Gui {
         public void SetCurrentToSelected() {
             foreach(DisplayData displayData in data){
                 if (displayData.IsSelected()) {
-                    SetCurrentData(displayData);
+                    index = data.IndexOf(displayData);
+                    SetCurrentData();
                 }
             }
         }
