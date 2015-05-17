@@ -6,10 +6,10 @@ using Utilities.Extensions;
 
 namespace CountDown.Gui {
     public class DisplayDataList {
-        public event Action SelectedDataChangedEvent;
+        public event Action CurrentDataChangedEvent;
         private IList<DisplayData> data = new List<DisplayData>();
         private int index;
-        private DisplayData selectedData;
+        private DisplayData currentData;
         private IDate date;
         public DisplayDataList(ICountDown countdown, Unit selectedUnit) {
             foreach (Unit unit in Enum.GetValues(typeof(Unit))) {
@@ -19,11 +19,11 @@ namespace CountDown.Gui {
                 }
             }
             this.date = countdown.Date;
-            SetSelectedData(index);
+            SetCurrentData(index);
         }
 
         public DisplayData Current() {
-            return selectedData;
+            return currentData;
         }
 
         public void Next() {
@@ -31,7 +31,7 @@ namespace CountDown.Gui {
             if (index >= data.Count) {
                 index = 0;
             }
-            SetSelectedData(index);
+            SetCurrentData(index);
         }
 
         public void Previous() {
@@ -39,7 +39,7 @@ namespace CountDown.Gui {
             if (index < 0) {
                 index = data.Count - 1;
             }
-            SetSelectedData(index);
+            SetCurrentData(index);
         }
 
         public void Random() {
@@ -48,25 +48,37 @@ namespace CountDown.Gui {
                 Random random = new Random();
                 index = random.Next(data.Count);
             } while (prevIndex == index);
-            SetSelectedData(index);
+            SetCurrentData(index);
         }
 
-        private void SetSelectedData(int index) {
-            if (selectedData != null) {
-                selectedData.DataChangedEvent -= DataChanged;
+        private void SetCurrentData(int index) {
+            SetCurrentData(data[index]);
+        }
+
+        private void SetCurrentData(DisplayData displayData) {
+            if (currentData != null) {
+                currentData.DataChangedEvent -= DataChanged;
             }
-            selectedData = data[index];
-            selectedData.DataChangedEvent += DataChanged;
-            SelectedDataChangedEvent.NullSafeInvoke();
+            currentData = displayData;
+            currentData.DataChangedEvent += DataChanged;
+            CurrentDataChangedEvent.NullSafeInvoke();
+        }
+
+        public void SetCurrentToSelected() {
+            foreach(DisplayData displayData in data){
+                if (displayData.IsSelected()) {
+                    SetCurrentData(displayData);
+                }
+            }
         }
 
         private void DataChanged() {
-            SelectedDataChangedEvent.NullSafeInvoke();
+            CurrentDataChangedEvent.NullSafeInvoke();
         }
 
         internal void Dispose() {
-            SelectedDataChangedEvent = null;
-            selectedData.DataChangedEvent -= SelectedDataChangedEvent;
+            CurrentDataChangedEvent = null;
+            currentData.DataChangedEvent -= CurrentDataChangedEvent;
         }
     }
 }

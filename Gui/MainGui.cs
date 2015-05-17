@@ -34,7 +34,7 @@ namespace CountDown.Gui {
         [STAThread]
         public void Start() {
             if (showMain) {
-                mainForm.Show();
+                mainForm.ShowForm();
             }
             else {
                 iconHandler.Show();
@@ -43,7 +43,7 @@ namespace CountDown.Gui {
         }
 
         private void IconClosed() {
-            mainForm.Show();
+            mainForm.ShowForm();
         }
 
         private void MainFormClosed() {

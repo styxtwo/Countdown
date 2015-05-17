@@ -20,14 +20,14 @@ namespace CountDown.Gui {
 
         private void AddObservers() {
             icon.DoubleClick += HideIcon;
-            data.SelectedDataChangedEvent += SelectedDataChangedEvent;
+            data.CurrentDataChangedEvent += SelectedDataChangedEvent;
             menu.OpenClicked += HideIcon;
             menu.ExitClicked += ExitEvent; 
         }
 
         private void ClearObservers() {
             icon.DoubleClick -= HideIcon;
-            data.SelectedDataChangedEvent -= SelectedDataChangedEvent;
+            data.CurrentDataChangedEvent -= SelectedDataChangedEvent;
             menu.OpenClicked -= HideIcon;
             menu.ExitClicked -= ExitEvent;
         }

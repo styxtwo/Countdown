@@ -18,7 +18,7 @@ namespace CountDown.Gui {
             this.selectionScreen = selectionScreen;
             this.dataList = dataList;
 
-            dataList.SelectedDataChangedEvent += DataChangedEvent;
+            dataList.CurrentDataChangedEvent += DataChangedEvent;
             DataChangedEvent();
             UpdateSelected();
         }
@@ -50,10 +50,17 @@ namespace CountDown.Gui {
             UnitValue.ForeColor = Color.OliveDrab;
         }
 
+        public void ShowForm() {
+            this.Show();
+            DataChangedEvent();
+            UpdateSelected();
+        }
+
         private void MainScreen_Closing(object sender, FormClosingEventArgs e) {
             if (e.CloseReason == CloseReason.UserClosing) {
                 e.Cancel = true;
                 Hide();
+                dataList.SetCurrentToSelected();
                 ClosedEvent.NullSafeInvoke();
             }
         }
