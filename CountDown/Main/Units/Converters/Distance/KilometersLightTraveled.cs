@@ -1,5 +1,4 @@
 ﻿using System;
-using System;
 
 namespace CountDown.Domain {
     class KilometersLightTraveled : UnitConverter {
@@ -14,7 +13,7 @@ namespace CountDown.Domain {
         }
 
         public override string UnitName {
-            get { return "Kilometers light traveled"; }
+            get { return "Kilometers light can travel"; }
         }
     }
 }

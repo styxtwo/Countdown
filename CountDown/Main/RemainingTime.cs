@@ -23,6 +23,9 @@ namespace CountDown.Domain {
             AddUnitTime(date, Unit.ElephantGestationPeriods, new ElephantGestationPeriods());
             AddUnitTime(date, Unit.Hours, new Hours());
             AddUnitTime(date, Unit.KilometersLightTraveled, new KilometersLightTraveled());
+            AddUnitTime(date, Unit.MetersSnailTraveled, new MetersSnailTraveled());
+            AddUnitTime(date, Unit.ISSOrbits, new ISSOrbits());
+            AddUnitTime(date, Unit.TimesToWatchPulpFiction, new TimesToWatchPulpFiction());
             AddUnitTime(date, Unit.Jiffies, new Jiffies());
             AddUnitTime(date, Unit.HeartBeats, new HeartBeats());
             AddUnitTime(date, Unit.BabiesBorn, new BabiesBorn());

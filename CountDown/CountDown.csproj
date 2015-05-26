@@ -47,8 +47,11 @@
     <Compile Include="Main\Poller.cs" />
     <Compile Include="Main\Units\Converters\BabiesBorn.cs" />
     <Compile Include="Main\Units\Converters\HeartBeats.cs" />
+    <Compile Include="Main\Units\Converters\ISSOrbits.cs" />
     <Compile Include="Main\Units\Converters\Jiffies.cs" />
     <Compile Include="Main\Units\Converters\Hours.cs" />
+    <Compile Include="Main\Units\Converters\Distance\MetersSnailTraveled.cs" />
+    <Compile Include="Main\Units\Converters\TimesToWatchPulpFiction.cs" />
     <Compile Include="Main\Units\UnitTime.cs" />
     <Compile Include="Main\Units\UnitConverter.cs" />
     <Compile Include="Main\Units\Converters\Days.cs" />
@@ -65,7 +68,7 @@
     <Compile Include="Main\Date.cs" />
     <Compile Include="API\IDate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Main\Units\Converters\KilometersLightTraveled.cs" />
+    <Compile Include="Main\Units\Converters\Distance\KilometersLightTraveled.cs" />
     <Compile Include="Tests\Converters\WorkingHoursTest.cs" />
     <Compile Include="Tests\Converters\WeekDaysTest.cs" />
     <Compile Include="Tests\Converters\WeekTest.cs" />

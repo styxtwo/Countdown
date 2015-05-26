@@ -1,18 +1,20 @@
 ﻿
 namespace CountDown.Domain {
     public enum Unit {
-        Jiffies,
-        Seconds,
-        Minutes,
+        WorkingHours,
+        Weeks,
+        BabiesBorn,
         Hours,
         WeekDays,
-        WorkingHours,
+        TimesToWatchPulpFiction,
         Days,
-        Weeks,
         ElephantGestationPeriods,
-
-        KilometersLightTraveled,
+        Minutes,
+        ISSOrbits,
         HeartBeats,
-        BabiesBorn
+        Seconds,
+        MetersSnailTraveled,
+        Jiffies,
+        KilometersLightTraveled,
     }
 }
