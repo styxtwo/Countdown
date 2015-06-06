@@ -8,8 +8,8 @@ using System.Xml;
 namespace XMLPersistence {
     class DateData : IDateData {
         private static readonly string FILE_NAME = "date.xml";
-        private static readonly string FILE_PATH = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-        private static readonly string FILE_LOCATION = FILE_PATH + @"\" + FILE_NAME;
+        private static readonly string FOLDER = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\CountDown";
+        private static readonly string FILE_LOCATION = FOLDER + @"\" + FILE_NAME;
 
         private static readonly DateTime DEFAULT_DATE = DateTime.Today;
         private static readonly String DEFAULT_NAME = "";
@@ -20,6 +20,11 @@ namespace XMLPersistence {
         private Unit unit;
 
         public DateData() {
+            System.Diagnostics.Debug.WriteLine(FOLDER);
+            if (!Directory.Exists(FOLDER)) {
+                System.Diagnostics.Debug.WriteLine(FOLDER);
+                Directory.CreateDirectory(FOLDER);
+            }
             if (File.Exists(FILE_LOCATION)) {
                 ReadValues();
                 return;
