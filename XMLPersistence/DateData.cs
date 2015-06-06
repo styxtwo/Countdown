@@ -20,7 +20,6 @@ namespace XMLPersistence {
         private Unit unit;
 
         public DateData() {
-            System.Diagnostics.Debug.WriteLine(FOLDER);
             if (!Directory.Exists(FOLDER)) {
                 System.Diagnostics.Debug.WriteLine(FOLDER);
                 Directory.CreateDirectory(FOLDER);
